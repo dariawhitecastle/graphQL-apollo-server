@@ -19,3 +19,23 @@ type User {
   posts: [Post]
   profile: Profile
 }
+
+input PostInput {
+  userId: ID!
+}
+
+input UserInput {
+  id: ID
+  email: String
+}
+
+input NewPostInput {
+  title: String!
+  content: String!
+  published: Boolean!
+}
+
+input NewUserInput {
+  email: String!
+  name: String!
+}

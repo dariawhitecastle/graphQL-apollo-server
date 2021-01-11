@@ -11,6 +11,39 @@ export type Scalars = {
   Float: number;
 };
 
+export type Mutation = {
+  __typename?: 'Mutation';
+  newPost: Post;
+  newUser: User;
+};
+
+
+export type MutationNewPostArgs = {
+  input?: Maybe<NewPostInput>;
+};
+
+
+export type MutationNewUserArgs = {
+  input?: Maybe<NewUserInput>;
+};
+
+export type Query = {
+  __typename?: 'Query';
+  posts?: Maybe<Array<Maybe<Post>>>;
+  profile?: Maybe<Profile>;
+  user?: Maybe<User>;
+};
+
+
+export type QueryPostsArgs = {
+  input?: Maybe<PostInput>;
+};
+
+
+export type QueryUserArgs = {
+  inout?: Maybe<UserInput>;
+};
+
 export type Post = {
   __typename?: 'Post';
   id: Scalars['ID'];
@@ -34,4 +67,24 @@ export type User = {
   name?: Maybe<Scalars['String']>;
   posts?: Maybe<Array<Maybe<Post>>>;
   profile?: Maybe<Profile>;
+};
+
+export type PostInput = {
+  userId: Scalars['ID'];
+};
+
+export type UserInput = {
+  id?: Maybe<Scalars['ID']>;
+  email?: Maybe<Scalars['String']>;
+};
+
+export type NewPostInput = {
+  title: Scalars['String'];
+  content: Scalars['String'];
+  published: Scalars['Boolean'];
+};
+
+export type NewUserInput = {
+  email: Scalars['String'];
+  name: Scalars['String'];
 };

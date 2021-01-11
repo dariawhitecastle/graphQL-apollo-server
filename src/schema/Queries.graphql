@@ -1,0 +1,5 @@
+type Query {
+  posts(input: PostInput): [Post]
+  profile: Profile
+  user(input: UserInput): User
+}
